@@ -23,6 +23,23 @@ public class Graph
             adjacencyList[u].Add((v, weight));
             adjacencyList[v].Add((u, weight));
         }
+        public bool IsFullyConnected()
+        {
+            bool[] visited = new bool[vertices];
+            DFS(0, visited);
+
+            return visited.All(v => v);
+
+            void DFS(int u, bool[] vis)
+            {
+                vis[u] = true;
+                foreach (var (v, _) in adjacencyList[u])
+                {
+                    if (!vis[v]) DFS(v, vis);
+                }
+            }
+        }
+
 
         public void MatrixToList()
         {
@@ -77,4 +94,9 @@ public class Graph
 
             return g;
         }
+        
+        
+
+
+       
 }
