@@ -2,28 +2,28 @@
 
 public class Graph
 {
-        public int[,] adjacencyMatrix;
-        public List<List<(int, int)>> adjacencyList;
+        public int[,] adjMatrix;
+        public List<List<(int, int)>> adjList;
         public int vertices;
 
         public Graph(int vertices)
         {
             this.vertices = vertices;
-            adjacencyMatrix = new int[vertices, vertices];
-            adjacencyList = new List<List<(int, int)>>();
+            adjMatrix = new int[vertices, vertices];
+            adjList = new List<List<(int, int)>>();
             for (int i = 0; i < vertices; i++)
-                adjacencyList.Add(new List<(int, int)>());
+                adjList.Add(new List<(int, int)>());
         }
 
         public void AddEdge(int u, int v, int weight)
         {
-            adjacencyMatrix[u, v] = weight;
-            adjacencyMatrix[v, u] = weight; 
+            adjMatrix[u, v] = weight;
+            adjMatrix[v, u] = weight; 
 
-            adjacencyList[u].Add((v, weight));
-            adjacencyList[v].Add((u, weight));
+            adjList[u].Add((v, weight));
+            adjList[v].Add((u, weight));
         }
-        public bool IsFullyConnected()
+        public bool FullyConnected()
         {
             bool[] visited = new bool[vertices];
             DFS(0, visited);
@@ -33,7 +33,7 @@ public class Graph
             void DFS(int u, bool[] vis)
             {
                 vis[u] = true;
-                foreach (var (v, _) in adjacencyList[u])
+                foreach (var (v, _) in adjList[u])
                 {
                     if (!vis[v]) DFS(v, vis);
                 }
@@ -43,34 +43,21 @@ public class Graph
 
         public void MatrixToList()
         {
-            adjacencyList = new List<List<(int, int)>>();
+            adjList = new List<List<(int, int)>>();
             for (int i = 0; i < vertices; i++)
-                adjacencyList.Add(new List<(int, int)>());
+                adjList.Add(new List<(int, int)>());
 
             for (int i = 0; i < vertices; i++)
             {
                 for (int j = 0; j < vertices; j++)
                 {
-                    if (adjacencyMatrix[i, j] != 0)
-                        adjacencyList[i].Add((j, adjacencyMatrix[i, j]));
+                    if (adjMatrix[i, j] != 0)
+                        adjList[i].Add((j, adjMatrix[i, j]));
                 }
             }
         }
 
-        public void ListToMatrix()
-        {
-            adjacencyMatrix = new int[vertices, vertices];
-
-            foreach (var u in adjacencyList)
-            {
-                foreach (var (v, weight) in u)
-                {
-                    adjacencyMatrix[adjacencyList.IndexOf(u), v] = weight;
-                }
-            }
-        }
-
-        public static Graph GenerateRandomGraph(int vertices, double density)
+        public static Graph RandomGraph(int vertices, double density)
         {
             var rand = new Random();
             Graph g = new Graph(vertices);
@@ -94,9 +81,4 @@ public class Graph
 
             return g;
         }
-        
-        
-
-
-       
 }

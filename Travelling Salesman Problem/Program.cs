@@ -1,6 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Diagnostics;
 
 namespace TravellingSalesmanProblem
 {
@@ -8,61 +6,58 @@ namespace TravellingSalesmanProblem
     {
         public static void Main(string[] args)
         {
-            int vertices = 40;
-            double density = 0.8;
+            int top = 200;
+            double density = 1;
             int runs = 100;
 
-            double totalMatrixTime = 0;
-            double totalListTime = 0;
-            double tickFrequency = 1000000.0 / Stopwatch.Frequency;
-            int successfulRuns = 0;
+            double MatrixTime = 0;
+            double ListTime = 0;
+            double FrequencyTicks = 1000000.0/Stopwatch.Frequency;
+            int successRun = 0;
 
 
-            Console.WriteLine($" Старт експерименту для {vertices} вершин, щільність: {density}");
+            Console.WriteLine($"Початок експерименту для {top} вершин, щільність {density}");
 
-            while (successfulRuns < runs)
+            while (successRun < runs)
             {
-                Graph graph = Graph.GenerateRandomGraph(vertices, density);
+                Graph graph = Graph.RandomGraph(top, density);
                 graph.MatrixToList();
 
-                if (!graph.IsFullyConnected())
+                if (!graph.FullyConnected())
                     continue; 
 
                 try
                 {
                     var sw1 = Stopwatch.StartNew();
-                    TSP.GreedyTSP(graph);
+                    TSP.TSPGreedy(graph);
                     sw1.Stop();
-                    double matrixTimeMicro = sw1.ElapsedTicks * tickFrequency;
-                    totalMatrixTime += matrixTimeMicro / 1000.0; 
+                    double matrixTimeMicro = sw1.ElapsedTicks * FrequencyTicks;
+                    MatrixTime += matrixTimeMicro/1000.0; 
 
 
                     var sw2 = Stopwatch.StartNew();
-                    TSP.GreedyTSP_List(graph);
+                    TSP.TSPList(graph);
                     sw2.Stop();
-                    double listTimeMicro = sw2.ElapsedTicks * tickFrequency;
-                    totalListTime += listTimeMicro / 1000.0; 
+                    double listTimeMicro = sw2.ElapsedTicks * FrequencyTicks;
+                    ListTime += listTimeMicro/1000.0; 
 
-                    successfulRuns++;
-                    Console.WriteLine($" Успішний запуск #{successfulRuns}");
+                    successRun++;
+                    Console.WriteLine($"Успішний запуск #{successRun}");
                 }
                 catch
                 {
-                    Console.WriteLine($"  Неповний маршрут — перегенеровуємо...");
+                    Console.WriteLine($"Неповний маршрут. Перегенерація");
                     continue;
                 }
             }
 
-            double avgMatrix = totalMatrixTime / runs;
-            double avgList = totalListTime / runs;
+            double avgMatrix = MatrixTime/runs;
+            double avgList = ListTime/runs;
 
-            Console.WriteLine($"Середній час (матриця): {avgMatrix:F4} мс");
-            Console.WriteLine($"Середній час (список):  {avgList:F4} мс");
-
-
-
-            Console.WriteLine($"\n ЕКСПЕРИМЕНТ ЗАВЕРШЕНО");
-            Console.WriteLine($"Вершин: {vertices}");
+            Console.WriteLine($"Середній час для матриці: {avgMatrix:F4} мс");
+            Console.WriteLine($"Середній час для списку:  {avgList:F4} мс");
+            Console.WriteLine("кінець експерименту");
+            Console.WriteLine($"Вершин: {top}");
             Console.WriteLine($"Щільність: {density}");
             
 

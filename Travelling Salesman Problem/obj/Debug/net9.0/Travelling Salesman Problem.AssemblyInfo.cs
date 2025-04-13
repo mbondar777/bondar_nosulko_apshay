@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Travelling Salesman Problem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b96b6b5c603aff65f350bb58487ab868a563cfe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60b678b85557584fe0b8f8d1ef660efd7391747d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Travelling Salesman Problem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Travelling Salesman Problem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
