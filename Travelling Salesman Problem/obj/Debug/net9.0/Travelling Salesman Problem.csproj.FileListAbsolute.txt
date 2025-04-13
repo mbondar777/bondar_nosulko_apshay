@@ -1,0 +1,15 @@
+/Users/agataapsaj/RiderProjects/bondar_nosulko_apshay/Travelling Salesman Problem/bin/Debug/net9.0/Travelling Salesman Problem
+/Users/agataapsaj/RiderProjects/bondar_nosulko_apshay/Travelling Salesman Problem/bin/Debug/net9.0/Travelling Salesman Problem.deps.json
+/Users/agataapsaj/RiderProjects/bondar_nosulko_apshay/Travelling Salesman Problem/bin/Debug/net9.0/Travelling Salesman Problem.runtimeconfig.json
+/Users/agataapsaj/RiderProjects/bondar_nosulko_apshay/Travelling Salesman Problem/bin/Debug/net9.0/Travelling Salesman Problem.dll
+/Users/agataapsaj/RiderProjects/bondar_nosulko_apshay/Travelling Salesman Problem/bin/Debug/net9.0/Travelling Salesman Problem.pdb
+/Users/agataapsaj/RiderProjects/bondar_nosulko_apshay/Travelling Salesman Problem/obj/Debug/net9.0/Travelling Salesman Problem.GeneratedMSBuildEditorConfig.editorconfig
+/Users/agataapsaj/RiderProjects/bondar_nosulko_apshay/Travelling Salesman Problem/obj/Debug/net9.0/Travelling Salesman Problem.AssemblyInfoInputs.cache
+/Users/agataapsaj/RiderProjects/bondar_nosulko_apshay/Travelling Salesman Problem/obj/Debug/net9.0/Travelling Salesman Problem.AssemblyInfo.cs
+/Users/agataapsaj/RiderProjects/bondar_nosulko_apshay/Travelling Salesman Problem/obj/Debug/net9.0/Travelling Salesman Problem.csproj.CoreCompileInputs.cache
+/Users/agataapsaj/RiderProjects/bondar_nosulko_apshay/Travelling Salesman Problem/obj/Debug/net9.0/Travelling Salesman Problem.sourcelink.json
+/Users/agataapsaj/RiderProjects/bondar_nosulko_apshay/Travelling Salesman Problem/obj/Debug/net9.0/Travelling Salesman Problem.dll
+/Users/agataapsaj/RiderProjects/bondar_nosulko_apshay/Travelling Salesman Problem/obj/Debug/net9.0/refint/Travelling Salesman Problem.dll
+/Users/agataapsaj/RiderProjects/bondar_nosulko_apshay/Travelling Salesman Problem/obj/Debug/net9.0/Travelling Salesman Problem.pdb
+/Users/agataapsaj/RiderProjects/bondar_nosulko_apshay/Travelling Salesman Problem/obj/Debug/net9.0/Travelling Salesman Problem.genruntimeconfig.cache
+/Users/agataapsaj/RiderProjects/bondar_nosulko_apshay/Travelling Salesman Problem/obj/Debug/net9.0/ref/Travelling Salesman Problem.dll
